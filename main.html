@@ -1,38 +1,102 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <title>Tic Tac Toe Multiplayer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      width: 90%;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 5px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      background: #e0e0e0;
+      font-size: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      text-transform: lowercase;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .game-area {
+      display: none;
+    }
+  </style>
+</head>
 <body>
-	<!-- the entire body must be written by student -->
-	<div class="container">
-		<input type="text" id="player1" placeholder="Enter Player 1 Name" />
-<input type="text" id="player2" placeholder="Enter Player 2 Name" />
-		
-	<button id="submit">Submit</button>
-		 </div>
-	<div class="game-area">
-		<h1>Tic Tac Toe</h1>
-		<div class="message" id="message"></div>
-		<div class="board" id="board"> 
-		<div class="cell" id="1"></div>
-      <div class="cell" id="2"></div>
-      <div class="cell" id="3"></div>
-      <div class="cell" id="4"></div>
-      <div class="cell" id="5"></div>
-      <div class="cell" id="6"></div>
-      <div class="cell" id="7"></div>
-      <div class="cell" id="8"></div>
-      <div class="cell" id="9"></div>
+  <div class="container">
+    <!-- Player Input Area -->
+    <div id="input-area">
+      <input type="text" id="player1" placeholder="Enter Player 1 Name" />
+      <input type="text" id="player2" placeholder="Enter Player 2 Name" />
+      <button id="submit">Submit</button>
+    </div>
+
+    <!-- Game Area -->
+    <div class="game-area" id="game-area">
+      <h1>Tic Tac Toe</h1>
+      <div class="message" class="message" id="message"></div>
+      <div class="board" id="board">
+        <div class="cell" id="1"></div>
+        <div class="cell" id="2"></div>
+        <div class="cell" id="3"></div>
+        <div class="cell" id="4"></div>
+        <div class="cell" id="5"></div>
+        <div class="cell" id="6"></div>
+        <div class="cell" id="7"></div>
+        <div class="cell" id="8"></div>
+        <div class="cell" id="9"></div>
+      </div>
     </div>
   </div>
-</div>
-    <script type="text/javascript" src="./script.js">
-</script>
-
-</body>
-
-</html>
+<script type="text/javascript" src="./script.js"> </script> </body> </html>
