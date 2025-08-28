@@ -6,13 +6,13 @@ let player1, player2;
 const submitButton = document.getElementById('submit');
 const messageDiv = document.getElementById('message');
 const cells = document.querySelectorAll('.cell');
-
+const gameArea = document.querySelector('.game-area');
 
 submitButton.addEventListener('click', function() {
     player1 = document.getElementById('player-1').value;
     player2 = document.getElementById('player-2').value;
     messageDiv.innerText = `${player1}, you're up!`;
-   
+   gameArea.style.display = 'block';
 });
 
 // Event listener for each cell
@@ -20,10 +20,20 @@ cells.forEach(cell => {
     cell.addEventListener('click', function() {
         if (!cell.innerText) { 
             cell.innerText = currentPlayer;
-            
-         
+            const winner = checkWinner();
+            if (winner) {
+                messageDiv.innerText = `${winner} congratulations you won!`;
+                cells.forEach(cell => cell.removeEventListener('click', arguments.callee)); // Disable further clicks
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Toggle player
+                messageDiv.innerText = currentPlayer === 'X' ? `${player1}, you're up!` : `${player2}, you're up!`;
+            }
+        }
     });
 });
+
+         
+   
 
 
 function checkWinner() {
